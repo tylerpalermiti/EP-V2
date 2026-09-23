@@ -466,3 +466,38 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* ---------- Utility ---------- */
 .mt-0 { margin-top: 0; }
 .text-center { text-align: center; }
+
+/* ---------- Partner bios (About page) ---------- */
+.partners-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+@media (max-width: 780px) { .partners-grid { grid-template-columns: 1fr; } }
+.partner-card {
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--white);
+  transition: border-color 0.2s var(--ease), transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.partner-card:hover { border-color: var(--sage); transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.partner-photo { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
+.partner-body { padding: 24px 22px 28px; }
+.partner-body h3 { font-size: 1.15rem; margin-bottom: 4px; }
+.partner-role {
+  font-family: var(--font-mono); font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--sage-dark); display: block; margin-bottom: 14px;
+}
+.partner-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.partner-tags span {
+  font-family: var(--font-mono); font-size: 0.68rem; border: 1px solid var(--line); border-radius: 999px;
+  padding: 5px 12px; color: var(--charcoal-soft);
+}
+.partner-bio-short p { font-size: 0.92rem; }
+.partner-bio-full { display: none; }
+.partner-bio-full.open { display: block; }
+.partner-bio-full p { font-size: 0.92rem; margin-bottom: 12px; }
+.partner-bio-full p:last-child { margin-bottom: 0; }
+.partner-toggle {
+  margin-top: 14px; background: none; border: none; padding: 0; cursor: pointer;
+  font-family: var(--font-mono); font-size: 0.78rem; color: var(--sage-dark); display: inline-block;
+}
+.partner-toggle:hover { color: var(--charcoal); }
+.partner-quote {
+  font-family: var(--font-display); font-style: italic; font-size: 0.92rem; color: var(--charcoal);
+  margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line);
+}
